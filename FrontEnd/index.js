@@ -43,26 +43,71 @@ function displayProjects(projects) {
     });
 }
 
-// Configuration des boutons de filtre
 function setupFilters(projects) {
     fetch('http://localhost:5678/api/categories')
         .then(response => response.json())
         .then(categories => {
             const filterContainer = document.getElementById('category-filters');
+            filterContainer.style.display = 'flex';
+            filterContainer.style.justifyContent = 'center';
+            filterContainer.style.alignItems = 'center';
 
-
+            // Création du bouton "Tous"
             const allButton = document.createElement('button');
             allButton.textContent = 'Tous';
-            allButton.addEventListener('click', () => showAllProjects(projects)); // Action sur le bouton "Tous"
+            allButton.addEventListener('click', () => {
+                showAllProjects(projects);
+                const allButtons = document.querySelectorAll('button');
+                allButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.style.color = '#1D6154';
+                    btn.style.backgroundColor = 'white';
+                });
+                allButton.classList.add('active');
+                allButton.style.color = 'white';
+                allButton.style.backgroundColor = '#1D6154';
+            });
+            allButton.style.fontFamily = 'Syne';
+            allButton.style.fontWeight = '700';
+            allButton.style.color = '#1D6154';
+            allButton.style.backgroundColor = 'white';
+            allButton.style.margin = '1em';
+            allButton.style.height = '4em';
+            allButton.style.width = '10em';
+            allButton.style.textAlign = 'center';
+            allButton.style.borderRadius = '60px';
             filterContainer.appendChild(allButton);
 
+            // Création des boutons pour chaque catégorie
             categories.forEach(category => {
                 const button = document.createElement('button');
                 button.textContent = category.name;
 
                 button.addEventListener('click', () => {
-                    filterItems(category.id, projects); // Appel de la fonction de filtrage
+                    filterItems(category.id, projects);
+                    const allButtons = document.querySelectorAll('button');
+                    allButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.style.color = '#1D6154';
+                        btn.style.backgroundColor = 'white';
+                    });
+                    allButton.classList.remove('active');
+                    allButton.style.color = '#1D6154';
+                    allButton.style.backgroundColor = 'white';
+                    button.classList.add('active');
+                    button.style.color = 'white';
+                    button.style.backgroundColor = '#1D6154';
                 });
+
+                button.style.fontFamily = 'Syne';
+                button.style.fontWeight = '700';
+                button.style.color = '#1D6154';
+                button.style.backgroundColor = 'white';
+                button.style.margin = '1em';
+                button.style.height = '4em';
+                button.style.width = '13em';
+                button.style.textAlign = 'center';
+                button.style.borderRadius = '60px';
 
                 filterContainer.appendChild(button);
             });

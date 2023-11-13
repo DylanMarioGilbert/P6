@@ -186,19 +186,4 @@ footer nav ul {
 	margin: 2em
 }
 
-button.category-button {
-	border-radius: 20px; /* Pour donner une forme ovale */
-	background-color: #1a472a; /* Vert foncé, à adapter selon le style souhaité */
-	color: white; /* Couleur du texte */
-	padding: 10px 20px; /* Espacement interne */
-	margin: 5px; /* Marge entre les boutons */
-	border: none; /* Retire la bordure */
-	cursor: pointer; /* Curseur au survol */
-	transition: background-color 0.3s; /* Animation lors du survol */
-  }
-  
-  button.category-button:hover {
-	background-color: #257a49; /* Changement de couleur au survol */
-  }
-  
 
