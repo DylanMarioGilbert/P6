@@ -114,3 +114,14 @@ function setupFilters(projects) {
         })
         .catch(error => console.error('Erreur lors de la récupération des catégories : ', error));
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Récupérer l'élément "login-link" pour y attacher un gestionnaire d'événement
+    const loginLink = document.getElementById('login-link');
+
+    // Lorsque l'utilisateur clique sur "login-link", rediriger vers la page de connexion
+    loginLink.addEventListener('click', function() {
+        window.location.href = 'login.html';
+    });
+});
+
+
