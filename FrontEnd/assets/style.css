@@ -251,7 +251,24 @@ button:active, button.active {
     align-items: center;
 }
 
+#projects-title {
+    float: left;
+    margin-right: 0; /* Ajout de cette ligne pour supprimer la marge droite */
+	padding-right: 0;
+}
+
+#edit-mode-icon {
+	margin-left: 0;
+	padding-left: 0;
+    float: right;
+}
 
 
+
+
+ 
+
+
+  
 
 

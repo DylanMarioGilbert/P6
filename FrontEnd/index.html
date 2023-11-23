@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
+	<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 
@@ -41,7 +42,12 @@
 		</article>
 	</section>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>		
+		<div class="container">
+		<h2 id="projects-title">Mes Projets</h2>
+		<div id="edit-mode-icon" style="display: none;">
+		<i class="fa-regular fa-pen-to-square">Modifier</i>
+		</div>
+		</div>	
 		<section id="category-filters">
 		</section>
 		<div class="gallery">
@@ -72,8 +78,7 @@
 		</ul>
 	</nav>
 </footer>
-<script src="index.js"></script>
-<script src="login.js"></script>
+<script src="assets/scripts/pages/home.js" type="module"></script>
 
 </body>
 </html>
