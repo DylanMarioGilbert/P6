@@ -1,18 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const apiUrl = 'http://localhost:5678/api/works'; // API pour récupérer les projets
+window.onload = async function() {
+    const apiUrl = 'http://localhost:5678/api/works';
+    
+    try {
+        const response = await fetch(apiUrl);
+        const projects = await response.json();
 
-    // Chargement initial des projets
-    fetch(apiUrl)
-        .then(response => response.json())
-        .then(projects => {
-            displayProjects(projects); // Affichage initial des projets
-            setupFilters(projects); // Configuration des boutons de filtre
-        })
-        .catch(error => console.error('Erreur : ', error));
-        // ... (ton code existant)
+        displayProjects(projects);
+        setupFilters(projects);
+    } catch (error) {
+        console.error('Erreur : ', error);
+    }
+};
 
-
-});
 
 // Filtrage des projets par catégorie
 function filterItems(categoryId, projects) {
@@ -53,7 +52,7 @@ function setupFilters(projects) {
             const filterContainer = document.getElementById('category-filters');
             filterContainer.style.display = 'flex';
             filterContainer.style.justifyContent = 'center';
-            filterContainer.style.alignItems = 'center';
+            filterContainer.style.alignItems = 'center';// ...
 
             // Création du bouton "Tous"
             const allButton = document.createElement('button');
@@ -61,57 +60,20 @@ function setupFilters(projects) {
             allButton.addEventListener('click', () => {
                 showAllProjects(projects);
                 const allButtons = document.querySelectorAll('button');
-                allButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                    btn.style.color = '#1D6154';
-                    btn.style.backgroundColor = 'white';
-                });
-                allButton.classList.add('active');
-                allButton.style.color = 'white';
-                allButton.style.backgroundColor = '#1D6154';
+                allButtons.forEach(btn => btn.classList.remove('active'));
             });
-            allButton.style.fontFamily = 'Syne';
-            allButton.style.fontWeight = '700';
-            allButton.style.color = '#1D6154';
-            allButton.style.backgroundColor = 'white';
-            allButton.style.margin = '1em';
-            allButton.style.height = '4em';
-            allButton.style.width = '10em';
-            allButton.style.textAlign = 'center';
-            allButton.style.borderRadius = '60px';
             filterContainer.appendChild(allButton);
-
+            
             // Création des boutons pour chaque catégorie
             categories.forEach(category => {
                 const button = document.createElement('button');
                 button.textContent = category.name;
-
                 button.addEventListener('click', () => {
                     filterItems(category.id, projects);
                     const allButtons = document.querySelectorAll('button');
-                    allButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.style.color = '#1D6154';
-                        btn.style.backgroundColor = 'white';
-                    });
-                    allButton.classList.remove('active');
-                    allButton.style.color = '#1D6154';
-                    allButton.style.backgroundColor = 'white';
+                    allButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-                    button.style.color = 'white';
-                    button.style.backgroundColor = '#1D6154';
                 });
-
-                button.style.fontFamily = 'Syne';
-                button.style.fontWeight = '700';
-                button.style.color = '#1D6154';
-                button.style.backgroundColor = 'white';
-                button.style.margin = '1em';
-                button.style.height = '4em';
-                button.style.width = '13em';
-                button.style.textAlign = 'center';
-                button.style.borderRadius = '60px';
-
                 filterContainer.appendChild(button);
             });
             // Ajoute la condition pour gérer l'affichage des boutons
@@ -191,18 +153,12 @@ function updatePageForLoggedInUser() {
     } 
     
 
- 
     // Modifier l'en-tête pour le mode édition avec un fond noir
     const siteHeader = document.getElementById('site-header');
     if (siteHeader) {
         siteHeader.style.backgroundColor = 'black';
     }
 
-    // Changer le texte du titre si nécessaire
-    const siteTitle = document.getElementById('site-title');
-    if (siteTitle) {
-        siteTitle.textContent = 'Mode édition';
-        siteTitle.color = 'White';
-    }
+    
 }
 

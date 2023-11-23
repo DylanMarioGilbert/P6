@@ -186,4 +186,72 @@ footer nav ul {
 	margin: 2em
 }
 
+/* Ajustement des styles pour le formulaire de connexion */
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    width: 200px; /* Ajuster la largeur du formulaire */
+    margin: auto; /* Centrer le formulaire */
+}
+
+h2#loginTitle {
+    margin-bottom: 30px;
+	margin-left: 30px; /* Vous pouvez ajuster la valeur selon vos besoins */
+	
+	
+}
+
+input[type="submit"] {
+    margin-left: 30px; /* Vous pouvez ajuster la valeur selon vos besoins */
+	width: 12em;
+	height: 4em;
+}
+
+
+input[type="text"], input[type="email"] {
+	width: 250px; /* Ajuster la largeur des champs de saisie */
+    height: 30px; /* Ajuster la hauteur des champs de saisie */
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 250px; /* Ajuster la largeur des champs de saisie */
+    height: 30px; /* Ajuster la hauteur des champs de saisie */
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* styles.css */
+
+button {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: #1D6154;
+    background-color: white;
+    margin: 1em;
+    height: 4em;
+    text-align: center;
+    border-radius: 60px;
+	width: 12em;
+}
+
+button:active, button.active {
+    color: white;
+    background-color: #1D6154;
+}
+
+#category-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
 
