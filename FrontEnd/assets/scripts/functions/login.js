@@ -15,10 +15,10 @@ export function updatePageForLoggedInUser() {
       editModeIcon.style.display = 'block';
   }
 
-  // Modifier l'en-tête pour le mode édition avec un fond noir
+  // Afficher l'en-tête pour le mode édition avec un fond noir
   const siteHeader = document.getElementById('site-header');
   if (siteHeader) {
-      siteHeader.style.backgroundColor = 'black';
+    siteHeader.style.display = 'block';
   }
 }
 
@@ -39,6 +39,7 @@ export function updatePageForLoggedOutUser() {
       editModeIcon.style.display = 'none';
   }
 
+
   // Afficher les boutons de filtre de catégories
   const categoryFilters = document.getElementById('category-filters');
   if (categoryFilters) {
@@ -55,7 +56,7 @@ export function updatePageForLoggedOutUser() {
   // Restaurer l'en-tête à son état initial
   const siteHeader = document.getElementById('site-header');
   if (siteHeader) {
-      siteHeader.style.backgroundColor = ''; // Remettre à la couleur d'origine
+      siteHeader.style.display = 'none'; // Masque
   }
 }
 
