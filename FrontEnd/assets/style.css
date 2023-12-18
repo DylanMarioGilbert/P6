@@ -46,14 +46,16 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/** end reset css**/
+
 body {
 	
 }
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
+	margin-left: 3em;
+	margin-right: 3em;
 }
 section {
 	margin: 50px 0
@@ -72,14 +74,13 @@ h1 > span {
 	font-family: 'Work Sans';
 	font-size:10px;
 	letter-spacing: 0.1em;
-;
 }
 
 h2{
 	font-family: 'Syne';
 	font-weight: 700;
 	font-size: 30px;
-	color: #1D6154
+	color: #1D6154;
 }
 nav ul {
 	display: flex;
@@ -177,60 +178,107 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
-footer nav ul {
-	display: flex;
-	justify-content: flex-end;
-	margin: 2em
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color:whitesmoke; 
+	height: 30px;
+	padding-top: 10px;
 }
 
-/* Ajustement des styles pour le formulaire de connexion */
+footer nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+footer.login-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color:whitesmoke; 
+	height: 30px;
+	padding-top: 15px;
+}
+
+footer.login-footer nav ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+
 article {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form {
-    width: 200px; /* Ajuster la largeur du formulaire */
-    margin: auto; /* Centrer le formulaire */
+.index-form {
+	width: 200px; 
+    margin: auto;
+	margin-left: 80px; 
+
+}
+
+.login-form {
+    width: 200px; 
+    margin: auto; 
+	margin-left: 540px;
 }
 
 h2#loginTitle {
     margin-bottom: 30px;
-	margin-left: 40px; /* Vous pouvez ajuster la valeur selon vos besoins */
+	margin-left: 25px; 
 	
 	
 }
 
 input[type="submit"] {
-    margin-left: 40px; /* Vous pouvez ajuster la valeur selon vos besoins */
+    margin-left: 110px; 
 	width: 12em;
 	height: 4em;
 }
 
 a {
-	margin-left: 40px;
+	margin-left: 25px;
 }
 
 
 input[type="text"], input[type="email"] {
-	width: 250px; /* Ajuster la largeur des champs de saisie */
-    height: 30px; /* Ajuster la hauteur des champs de saisie */
+	width: 420px;
+    height: 51px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 input[type="text"], input[type="password"] {
-    width: 250px; /* Ajuster la largeur des champs de saisie */
-    height: 30px; /* Ajuster la hauteur des champs de saisie */
+	width: 420px;
+    height: 51px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
+select {
+	width: 420px;
+    height: 51px;
+    top: 1011px;
+    left: 510px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 
-/* Sélecteur pour le textarea */
+}
+
+
 #message {
-    width: 300px;
+    width: 420px;
     height: 150px;
 }
 
@@ -264,14 +312,19 @@ button:active, button.active {
     display: flex;
 	align-items: center;
 	justify-content: center;
-    padding: 10 20px; /* Ajoute une marge intérieure pour éviter les bords de la page */
+    padding: 10 20px; 
 }
 
 
 #edit-mode-icon i {
 	margin-left: 10px;
 	margin-right: 3px;
-    margin-bottom: 25px; /* Ajoute un espace entre l'icône et le texte "Modifier" */
+    margin-bottom: 25px; 
+	cursor: pointer;
+}
+
+#edit-mode-icon { 
+	cursor: pointer;
 }
 
 #site-header {
@@ -301,7 +354,6 @@ button:active, button.active {
 	font-size: 14px;
 }
 
-/* Styles pour la fenêtre modale */
 .modal {
     display: none;
     position: fixed;
@@ -317,7 +369,6 @@ button:active, button.active {
 
 .modal-content {
     background-color: #FFFFFF;
-	;
     margin: 15% auto;
 	height: 798px;
     border: 10px solid #888;
@@ -325,6 +376,7 @@ button:active, button.active {
 	Top:660px;
 	Left:405px;
 	border-radius:10px;
+
 }
 
 
@@ -333,6 +385,11 @@ button:active, button.active {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    top: 1px !important;
+    right: 1px !important;
+	margin-right: 15px;
+	margin-top: 15px;
+	
 }
 
 .close:hover,
@@ -342,38 +399,59 @@ button:active, button.active {
     cursor: pointer;
 }
 
-/* Ajoutez des styles pour le reste du contenu de la modale */
+.closebis {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 1px !important;
+    right: 1px !important;
+	margin-top: 15px;
+	margin-right: 15px;
+	
+}
+
+.closebis:hover,
+.closebis:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 
 h3 {
-    text-align: center; /* Centre le titre */
-    margin-top: 2em; /* Supprime la marge par défaut du titre */
+    text-align: center; 
+    margin-top: 2em; 
 	font-size:xx-large;
 }
 
 #gallery-container {
-    margin-left: 4em;
-    margin-right: 3em;
-    margin-top: 2em;
-    height: 38em;
-    width: 38em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em; /* Espacement entre les images */
+    margin: 2em 3em 0 4em; /* Marges ajustées */
+	height: 38em;
+}
+
+
+.gallery-item {
+	position: relative; 
+    width: 76.86px;
+    height: 102.57px;
+    margin: 5px; 
 }
 
 
 
-#gallery-item img {
-	width: 50px; /* 20% pour 5 images par ligne, 1em pour la marge entre les images */
-    height: 50px;
-    margin-bottom: 1em;
-	margin-right: 1em;
-	Top:796px;
-	Left:510px;
-
+.gallery-item img {
+	width: 100%;
+    height: 100%;
     
 }
 
 
 hr{
-	border: 0.5px solid gray;  /* Couleur et style de la ligne */
+	border: 0.5px solid gray;  
 	width: 30em;
 }
 
@@ -385,39 +463,131 @@ hr{
 .addPicture {
 	color:white;
 	background-color: #1D6154;
+	Width:237px;
+	Height:36px;
+	cursor: pointer;
 }
 
 .delete-btn {
 	color: white;
 	background-color: black;
-    height: 1em;
-    border-radius: 15px;
-    width: 3em;
-	padding: 1em 1em 1em 1em;
+    Width:25px;
+	Height:25px;
+	border-radius:2px;
+	position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+	margin-right: 0;
+	margin-top: 0;
+	
+	
+	
+}
+
+.fa-arrow-left {
+    font-size: 24px;
+	margin-left: 15px;
+	margin-top: 15px;
 }
 
 
+.delete-btn i {
+	display: flex;
+	justify-content: center;
+}
+
+.photocontainer {
+	margin-top: 1em;
+	margin-left: 8em;
+	display: flex;
+	justify-content: center;
+	background-color: #E8F1F6;
+	Width:420px;
+	Height:169px;
+
+	
+}
+
+.addphoto {
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+	border-radius:3px;
+	background-color:#E8F1F6;
+	
+}
 
 
+.imagecenter {
+	margin-top: 5px;
+	display: flex;
+	justify-content: center;
+	
+}
 
+.imagecenter i {
+    font-size: 66px; 
+	font-weight: 400;
+}
 
+.fa-image {
+	color:#B9C5CC;
 
+}
 
+.buttoncenter {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
 
+.buttoncenter button {
+	margin-top: 5px;
+	color:darkslategray;
+	background-color:lightgrey;
+	cursor: pointer;
 
+	
+}
 
+.buttoncenter p {
+	font-size: xx-small;
+	
+}
 
+.photoform {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 7.5em;
+	margin-top: 4em;
+	margin-bottom: 5em;
+}
 
+.buttoncenterbis {
+	display: flex;
+	justify-content: center;
 
+}
 
+.buttoncenterbis button {
+	background-color: #1D6154; /* Couleur du bouton actif */
+    color: white;
+    cursor: pointer;
+	margin-top: 3em;
+	width: 237px;
+	height: 36px;
+	
+}
 
+.labelModal {
+    width: 420px;
+}
 
-
-
-
-
-
-
-
-
+.buttoncenterbis button:disabled {
+	background-color: gray;
+	cursor: not-allowed;
+}
 

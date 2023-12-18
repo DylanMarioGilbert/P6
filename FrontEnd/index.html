@@ -69,23 +69,51 @@
               <i class="fa-regular fa-pen-to-square"></i>Modifier
             </div>
           </div>
-          <!-- Fenêtre modale -->
           <div id="modal-id" class="modal">
-						<span class="close">&times;</span>
-						<!-- Contenu de votre fenêtre modale -->
             <div id="modal-content" class="modal-content modal-content-list">
+              <span class="close">&times;</span>
               <h3>Galerie Photo</h3>
-              <!-- Ajoutez cette ligne pour le titre -->
               <div id="gallery-container"></div>
-              <hr/>
+              <hr />
               <div class="center-container">
-                <!-- Bouton "Ajouter une photo" -->
-                <button type="button" class="addPicture">Ajouter une photo</button>
+                <button type="button" class="addPicture">
+                  Ajouter une photo
+                </button>
               </div>
             </div>
 
-		<div class="modal-content modal-content-create">Creation form</div>
-        </div>
+            <form id="create-work" class="modal-content modal-content-create" action="#">
+              <div class="backBtn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span class="closebis">&times;</span>
+              </div>
+              <h3>Ajout photo</h3>
+              <input type="file" name="image" style="display: none;"/>
+              <div class="photocontainer">
+                <div class="addphoto">
+                  <div class="hidephoto">
+                    <div class="imagecenter">
+                      <i class="fas fa-image"></i>
+                    </div>
+                    <div class="buttoncenter">
+                      <button type="button">+ Ajouter photo</button>
+                      <p>jpg, png : 4mo max</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="photoform">
+                <label for="title" class="label">Titre</label>
+                <input type="text" id="title" name="title" required />
+                <label for="category" class="label">Catégorie</label>
+                <select id="category" name="category" required ></select>
+              </div>
+              <hr />
+              <div class="buttoncenterbis">
+                <button type="submit" disabled >Valider</button>
+              </div>
+            </form>
+          </div>
 
           <section id="category-filters"></section>
           <div class="gallery"></div>
@@ -93,7 +121,7 @@
         <section id="contact">
           <h2>Contact</h2>
           <p>Vous avez un projet ? Discutons-en !</p>
-          <form action="#" method="post">
+          <form action="#" method="post" class="index-form">
             <label for="name">Nom</label>
             <input type="text" name="name" id="name" />
             <label for="email">Email</label>
@@ -102,13 +130,14 @@
             <textarea
               name="message"
               id="message"
-              cols="30"
-              rows="10"
+              cols="40"
+              rows="15"
             ></textarea>
             <input type="submit" value="Envoyer" />
           </form>
         </section>
       </main>
+    </div>
 
       <footer>
         <nav>
@@ -118,7 +147,7 @@
         </nav>
       </footer>
       <script src="assets/scripts/pages/home.js" type="module"></script>
-      <script src="assets/scripts/pages/modale.js"></script>
-    </div>
+      <script src="assets/scripts/pages/modale.js" type="module"></script>
+    
   </body>
 </html>

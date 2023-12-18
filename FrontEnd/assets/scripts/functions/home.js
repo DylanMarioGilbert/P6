@@ -49,10 +49,11 @@ export function setupFilters(projects) {
         showAllProjects(projects);
         const allButtons = document.querySelectorAll("button");
         allButtons.forEach((btn) => btn.classList.remove("active"));
+        allButton.classList.add("active");
+
       });
       filterContainer.appendChild(allButton);
 
-      // Création des boutons pour chaque catégorie
       categories.forEach((category) => {
         const button = document.createElement("button");
         button.textContent = category.name;
@@ -64,17 +65,14 @@ export function setupFilters(projects) {
         });
         filterContainer.appendChild(button);
       });
-      // Ajoute la condition pour gérer l'affichage des boutons
       if (isLoggedIn) {
-        // Masquer les boutons individuels
         const buttons = document.querySelectorAll("#category-filters button");
         buttons.forEach((button) => {
           button.style.display = "none";
         });
       }
-      // Ajouter une marge ou un espace supplémentaire entre les projets et les images de la galerie
       const gallery = document.querySelector(".gallery");
-      gallery.style.marginTop = "20px"; // Vous pouvez ajuster la valeur selon vos besoins
+      gallery.style.marginTop = "20px"; 
     })
     .catch((error) =>
       console.error("Erreur lors de la récupération des catégories : ", error)
